@@ -28,7 +28,7 @@ public static void main(String args[]) {
 	        System.out.println("Press 3 to delete plant");
 	        System.out.println("Press 4 to view all plants");
 	        System.out.println("Press 5 to find plant by origin country name");
-	        System.out	.println("Press 6 to find outdoor plants which requires sunlight");
+	        System.out.println("Press 6 to find outdoor plants which requires sunlight");
 	        System.out.println("Press 7 to count plants by water supply frequency");
 	        System.out.println("Press 8 to exit");
 	        System.out.println("---------------------------------------");
@@ -85,7 +85,7 @@ public static void main(String args[]) {
 			        }
 		        	else {
 		        		
-		        		throw new nursaryException("Plant record inserted successfully.");
+		        		throw new nursaryException("Plant record inserted un-successfully.");
 		        		
 		        	}
 		        }
@@ -146,7 +146,7 @@ public static void main(String args[]) {
 	        
 	        case 4:
 		        System.out.println("---------------------------------------");
-		        ArrayList<Plant> arr=p.showAllPlants();
+		        try{ArrayList<Plant> arr=p.showAllPlants();
 		        for(int i=0;i<arr.size();i++) {
 			        Plant t=arr.get(i);
 			        System.out.println("Plant ID : "+ t.plantId+" ");
@@ -156,6 +156,13 @@ public static void main(String args[]) {
 			        System.out.println("Sunlight required : "+ t.sunLightRequired+" ");
 			        System.out.println("Cost : "+ t.cost);
 			        System.out.println("---------------------------------------");   
+		        }
+		        }
+		        catch(nursaryException e)
+		        {
+		        	System.out.println("---------------------------------------");
+		        	System.out.println("Plant not found");
+		        	System.out.println("---------------------------------------");
 		        }
 	        break;
 	        

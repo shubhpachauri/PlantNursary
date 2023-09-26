@@ -92,7 +92,7 @@ public class PlantDAO {
 			return true;
 			}
 
-		public ArrayList<Plant> showAllPlants(){
+		public ArrayList<Plant> showAllPlants() throws nursaryException{
 		ArrayList<Plant> arr=new ArrayList<Plant>();
 		try {
 		String query1="select * from plant";
@@ -117,6 +117,10 @@ public class PlantDAO {
 		       
 		} catch(SQLException e) {
 
+		}
+		if(arr.size()==0)
+		{
+			throw new nursaryException("No Plant Found");
 		}
 
 		        return arr;
