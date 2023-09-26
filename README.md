@@ -64,6 +64,8 @@ PlantDAO
 +countPlantsByWaterSupplyFrequency(String):in
 t
 
+
+
 Note: Here plant type is indoor/outdoor and water supply frequency is daily/alternate days/weekly
 4. User Interface
 The Plant Nursery System should have menu to select operation to perform. Wherever search
