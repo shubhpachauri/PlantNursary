@@ -19,7 +19,7 @@ public static void main(String args[]) {
         Scanner sc=new Scanner(System.in);
 
         PlantDAO p = new PlantDAO();
-        int choice;
+        int choice=0;
 	
         do {
         	
@@ -33,9 +33,8 @@ public static void main(String args[]) {
 	        System.out.println("Press 8 to exit");
 	        System.out.println("---------------------------------------");
 	        System.out.println("Please enter your choice");
-	        choice = sc.nextInt();
-	        
-	        
+	        try{choice = sc.nextInt();
+	       
 	        System.out.println("---------------------------------------");
 	        switch(choice) {
         	case 1:
@@ -172,6 +171,7 @@ public static void main(String args[]) {
 		        sc.nextLine();
 		        System.out.println("---------------------------------------");
 		        String cntry=sc.nextLine();
+		        cntry = cntry.toLowerCase();
 		        System.out.println("---------------------------------------");
 		        
 		        try {ArrayList<Plant> arr2=p.searchByOriginCountryName(cntry);
@@ -242,6 +242,11 @@ public static void main(String args[]) {
 	        break;
 	        
 	        } //end of switch
+	        }catch(Exception e)
+	        {
+	        	System.out.println("Please enter a vaild input from the menu");
+	        	sc.nextLine();
+	        }
         
 	         } while(choice!=8);
         }
